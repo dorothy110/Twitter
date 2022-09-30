@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OxY-mn-815">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4864" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -53,9 +53,9 @@
         <!--Home-->
         <scene sceneID="d1l-Ti-bWI">
             <objects>
-                <tableViewController id="29U-wz-xLK" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="29U-wz-xLK" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GIH-fD-uW2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -67,37 +67,34 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-xa-7Gi">
-                                            <rect key="frame" x="17" y="11" width="65" height="65"/>
+                                            <rect key="frame" x="16" y="11" width="65" height="65"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="65" id="GC8-Fi-mng"/>
-                                                <constraint firstAttribute="height" constant="65" id="Hsh-Uh-A4u"/>
+                                                <constraint firstAttribute="width" constant="65" id="BxK-Eb-zjg"/>
+                                                <constraint firstAttribute="height" constant="65" id="PTB-wI-e6i"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srk-zV-9HG">
-                                            <rect key="frame" x="90" y="13" width="81" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srk-zV-9HG">
+                                            <rect key="frame" x="89" y="11" width="81" height="21.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8c-TB-XQy">
-                                            <rect key="frame" x="90" y="39" width="285" height="83"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Tweets content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8c-TB-XQy">
+                                            <rect key="frame" x="89" y="36.5" width="270" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="srk-zV-9HG" secondAttribute="trailing" constant="188" id="7ao-1Z-cnb"/>
-                                        <constraint firstAttribute="trailing" secondItem="u8c-TB-XQy" secondAttribute="trailing" id="CU8-wP-muA"/>
-                                        <constraint firstItem="u8c-TB-XQy" firstAttribute="top" secondItem="srk-zV-9HG" secondAttribute="bottom" constant="4" id="Dte-NF-aos"/>
-                                        <constraint firstItem="u8c-TB-XQy" firstAttribute="top" secondItem="srk-zV-9HG" secondAttribute="bottom" constant="4" id="Hm8-ej-xsj"/>
-                                        <constraint firstAttribute="trailing" secondItem="u8c-TB-XQy" secondAttribute="trailing" id="Ppx-aF-hni"/>
-                                        <constraint firstItem="u8c-TB-XQy" firstAttribute="leading" secondItem="m6u-xa-7Gi" secondAttribute="trailing" constant="8" id="fqz-d9-gp6"/>
-                                        <constraint firstItem="m6u-xa-7Gi" firstAttribute="top" secondItem="a0U-Gd-h2S" secondAttribute="topMargin" id="ihh-P2-HWU"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="srk-zV-9HG" secondAttribute="bottom" constant="76" id="npp-3Y-MKf"/>
-                                        <constraint firstItem="srk-zV-9HG" firstAttribute="leading" secondItem="m6u-xa-7Gi" secondAttribute="trailing" constant="8" id="qEV-kS-nT6"/>
-                                        <constraint firstItem="u8c-TB-XQy" firstAttribute="leading" secondItem="m6u-xa-7Gi" secondAttribute="trailing" constant="8" id="rJx-ij-rFi"/>
-                                        <constraint firstAttribute="bottom" secondItem="u8c-TB-XQy" secondAttribute="bottom" id="uxr-Ea-Xk8"/>
+                                        <constraint firstItem="u8c-TB-XQy" firstAttribute="top" secondItem="srk-zV-9HG" secondAttribute="bottom" constant="4" id="3oI-Vz-5y3"/>
+                                        <constraint firstItem="m6u-xa-7Gi" firstAttribute="leading" secondItem="a0U-Gd-h2S" secondAttribute="leadingMargin" id="5t4-D8-fz9"/>
+                                        <constraint firstItem="m6u-xa-7Gi" firstAttribute="top" secondItem="a0U-Gd-h2S" secondAttribute="topMargin" id="9xb-MZ-xZt"/>
+                                        <constraint firstItem="srk-zV-9HG" firstAttribute="leading" secondItem="m6u-xa-7Gi" secondAttribute="trailing" constant="8" id="BDT-jZ-jtB"/>
+                                        <constraint firstItem="u8c-TB-XQy" firstAttribute="trailing" secondItem="a0U-Gd-h2S" secondAttribute="trailingMargin" id="GDt-1z-Ewn"/>
+                                        <constraint firstItem="u8c-TB-XQy" firstAttribute="leading" secondItem="m6u-xa-7Gi" secondAttribute="trailing" constant="8" id="RER-2U-aEi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="u8c-TB-XQy" secondAttribute="bottom" id="cXZ-tA-bTJ"/>
+                                        <constraint firstItem="srk-zV-9HG" firstAttribute="top" secondItem="a0U-Gd-h2S" secondAttribute="topMargin" id="nDG-C2-0bS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -128,10 +125,16 @@
         <!--Navigation Controller-->
         <scene sceneID="2f4-LM-WHt">
             <objects>
-                <navigationController id="rgZ-sf-Lbp" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="rgZ-sf-Lbp" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zO0-Tr-vBQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="29U-wz-xLK" kind="relationship" relationship="rootViewController" id="gh6-k5-w1R"/>

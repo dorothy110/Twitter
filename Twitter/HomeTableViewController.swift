@@ -4,14 +4,22 @@ class HomeTableViewController: UITableViewController {
     var tweetarry = [NSDictionary]()
     var numberoftweet:Int!
     
+    let myrefreshcontrol = UIRefreshControl()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadtweet()
+        
+        myrefreshcontrol.addTarget(self, action: #selector(loadtweet), for: .valueChanged)
+        tableView.refreshControl = myrefreshcontrol
     }
     
-    func loadtweet(){
+    @objc func loadtweet(){
+        
+        numberoftweet = 20
         let myurl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let myparam = ["count":10]
+        let myparam = ["count":numberoftweet]
         
         TwitterAPICaller.client?.getDictionariesRequest(url: myurl, parameters: myparam, success: { (tweets:[NSDictionary]) in
             self.tweetarry.removeAll()
@@ -19,10 +27,39 @@ class HomeTableViewController: UITableViewController {
                 self.tweetarry.append(tweet)
             }
             self.tableView.reloadData()
+            self.myrefreshcontrol.endRefreshing()
         }, failure: { (Error) in
             print("Counld not retreive tweets! oh no!")
+            print(Error.localizedDescription)
         })
     }
+    
+    func loadmoretweets(){
+        let myurl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        numberoftweet = numberoftweet + 20
+        let myparam = ["count":numberoftweet]
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: myurl, parameters: myparam, success: { (tweets:[NSDictionary]) in
+            self.tweetarry.removeAll()
+            for tweet in tweets{
+                self.tweetarry.append(tweet)
+            }
+            self.tableView.reloadData()
+ 
+        }, failure: { (Error) in
+            print("Counld not retreive tweets! oh no!")
+            print(Error.localizedDescription)
+        })
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == tweetarry.count{
+            loadmoretweets()
+        }
+    }
+    
+    
+    
     
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout()

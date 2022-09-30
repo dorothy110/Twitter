@@ -1,6 +1,6 @@
-# Project 3 - *Name of App Here*
+# Project 3 - *Twitter Monitor*
 
-**Name of your app** is a basic twitter app to read your tweets.
+**Twitter Monitor** is a basic twitter app to read your tweets.
 
 Time spent: **6** hours spent in total
 
@@ -12,7 +12,7 @@ The following **required** functionality is completed:
 - [X] User can log in. (1pt)
 - [X] User can log out. (1pt)
 - [X] User stays logged in across restarts. (1pt)
-- [ ] User can view tweets with the user profile picture, username, and tweet text. (6pts)
+- [x] User can view tweets with the user profile picture, username, and tweet text. (6pts)
 
 The following **bonus** features are implemented:
 
@@ -23,5 +23,5 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/SPcfNbTHBp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/1GiJLQg601.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 

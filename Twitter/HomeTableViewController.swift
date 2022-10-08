@@ -15,6 +15,11 @@ class HomeTableViewController: UITableViewController {
         tableView.refreshControl = myrefreshcontrol
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadtweet()
+    }
+    
     @objc func loadtweet(){
         
         numberoftweet = 20
@@ -79,13 +84,24 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data {
             cell.profileimageview.image = UIImage(data:imageData)
         }
+        
+        cell.setFavorite(tweetarry[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetarry[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetarry[indexPath.row]["retweeted"] as! Bool)
+        
         return cell
     }
 
+
+
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
